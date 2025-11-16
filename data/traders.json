@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-16T13:00:35.133Z",
+  "lastUpdated": "2025-11-16T14:00:35.130Z",
   "source": "metaforge",
   "traders": [
     {
@@ -739,7 +739,7 @@
           "description": "Unlocks a Raider Hatch.",
           "rarity": "Rare",
           "type": "Key",
-          "value": 1000,
+          "value": 2000,
           "price": 9000,
           "currency": null
         }
