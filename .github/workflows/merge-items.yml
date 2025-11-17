@@ -23,8 +23,10 @@ jobs:
 
       - name: Clone RaidTheory data repo
         run: |
+          # Ensure directory is clean before cloning
+          rm -rf external/arcraiders-data
           mkdir -p external
-          git clone --depth 1 https://github.com/RaidTheory/arcraiders-data.git external/arcraiders-data
+          git clone --depth 1 https://github.com/RaidTheory/arcraiders-data.git external/arcraiders-data.git external/arcraiders-data
 
       - name: Set up Python
         uses: actions/setup-python@v5
