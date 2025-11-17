@@ -1,74 +1,73 @@
-name: Merge Arc Raiders items
+name: Merge MetaForge & RaidTheory items
 
 on:
-  # Manual run from the Actions tab
   workflow_dispatch:
-
-  # Scheduled run once a day at 3 AM Pacific (11:00 UTC)
   schedule:
-    - cron: "0 11 * * *"
+    - cron: "0 10 * * *"  # 10:00 UTC daily – adjust if you like
 
 permissions:
-  contents: write  # needed so we can push updated items.json
+  contents: write
+  pull-requests: write
 
 jobs:
   merge-items:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # so git diff works correctly
+          fetch-depth: 0
 
-      - name: Show repo structure
+      - name: Ensure external dir exists and is clean
         run: |
-          pwd
-          ls
-          echo "---- scripts dir ----"
-          ls scripts || echo "scripts directory not found"
-
-      - name: Clone RaidTheory data repo
-        run: |
-          echo "Cleaning external directory..."
-          rm -rf external/arcraiders-data
           mkdir -p external
+          if [ -d external/arcraiders-data ]; then
+            echo "Cleaning existing external/arcraiders-data directory"
+            rm -rf external/arcraiders-data
+          fi
 
-          echo "Cloning RaidTheory repo..."
-          git clone --depth 1 "https://github.com/RaidTheory/arcraiders-data.git" "external/arcraiders-data"
+      - name: Clone RaidTheory arcraiders-data
+        run: |
+          git clone https://github.com/RaidTheory/arcraiders-data.git external/arcraiders-data
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      # Optional: if you ever add requirements.txt, this will install them.
-      # If there's no requirements.txt, this does nothing and exits cleanly.
-      - name: Install Python dependencies (optional)
-        run: |
-          if [ -f requirements.txt ]; then
-            pip install -r requirements.txt
-          else
-            echo "No requirements.txt, skipping pip install."
-          fi
-
-      - name: Run merge script
+      - name: Run merge_items.py
         run: |
           python scripts/merge_items.py
 
-      - name: Commit and push updated items.json
+      - name: Check for changes
         run: |
-          # If nothing changed, bail out
           if git diff --quiet; then
-            echo "No changes to commit."
+            echo "No changes to commit"
             exit 0
           fi
 
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # Adjust this list if your script updates additional files
+      - name: Commit changes
+        run: |
+          git config user.name "ftl-bot"
+          git config user.email "jesposo+ghbot@pm.me"
           git add data/items.json
-
           git commit -m "chore: update items.json via merge-items workflow"
-          git push
+
+      - name: Create or update pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: chore/auto-update-items
+          title: "chore: update items.json via merge-items workflow"
+          body: |
+            Automated update of `data/items.json` using:
+
+            - MetaForge items as the base
+            - RaidTheory data merged via `scripts/merge_items.py`
+
+            This PR is created by the merge-items GitHub Actions workflow.
+          commit-message: "chore: update items.json via merge-items workflow"
+          labels: |
+            automated
+            items
