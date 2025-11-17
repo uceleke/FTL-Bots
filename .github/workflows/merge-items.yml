@@ -54,7 +54,7 @@ jobs:
 
       - name: Run merge script
         run: |
-          python scripts/merge-items.py
+          python scripts/merge_items.py
 
       - name: Commit and push updated items.json
         run: |
