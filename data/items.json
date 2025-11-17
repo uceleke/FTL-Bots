@@ -71,7 +71,24 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-10-28T12:58:32.940898+00:00"
+      "updatedAt": "2025-10-28T12:58:32.940898+00:00",
+      "rtId": "adrenaline_shot",
+      "weightKg": 0.2,
+      "stackSize": 5,
+      "recipe": {
+        "chemicals": 3,
+        "plastic_parts": 3
+      },
+      "recyclesInto": {
+        "chemicals": 1,
+        "plastic_parts": 1
+      },
+      "craftBench": "med_station",
+      "rtEffects": {
+        "Stamina Regeneration": "5/s",
+        "Duration": "10s",
+        "Use Time": "1s"
+      }
     },
     {
       "id": "advanced-arc-powercell",
@@ -151,7 +168,13 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-10-17T23:09:59.354807+00:00",
-      "updatedAt": "2025-11-16T18:24:23.79568+00:00"
+      "updatedAt": "2025-11-16T18:24:23.79568+00:00",
+      "rtId": "advanced_arc_powercell",
+      "weightKg": 0.5,
+      "stackSize": 5,
+      "recyclesInto": {
+        "arc_powercell": 2
+      }
     },
     {
       "id": "advanced-electrical-components",
@@ -232,7 +255,22 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-10-31T15:18:08.567486+00:00"
+      "updatedAt": "2025-10-31T15:18:08.567486+00:00",
+      "rtId": "advanced_electrical_components",
+      "weightKg": 1.0,
+      "stackSize": 5,
+      "recipe": {
+        "wires": 3,
+        "electrical_components": 2
+      },
+      "recyclesInto": {
+        "electrical_components": 1,
+        "wires": 1
+      },
+      "salvagesInto": {
+        "electrical_components": 1
+      },
+      "craftBench": "refiner"
     },
     {
       "id": "advanced-electrical-components-recipe",
@@ -391,7 +429,19 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-10-31T15:18:55.209831+00:00"
+      "updatedAt": "2025-10-31T15:18:55.209831+00:00",
+      "rtId": "advanced_mechanical_components",
+      "weightKg": 1.0,
+      "stackSize": 5,
+      "recipe": {
+        "steel_spring": 2,
+        "mechanical_components": 2
+      },
+      "recyclesInto": {
+        "mechanical_components": 1,
+        "wires": 1
+      },
+      "craftBench": "refiner"
     },
     {
       "id": "advanced-mechanical-components-recipe",
@@ -536,7 +586,15 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-10-05T13:21:02.305+00:00",
-      "updatedAt": "2025-10-28T12:58:32.940898+00:00"
+      "updatedAt": "2025-10-28T12:58:32.940898+00:00",
+      "rtId": "agave",
+      "weightKg": 0.2,
+      "stackSize": 10,
+      "rtEffects": {
+        "Healing": "1/s",
+        "Duration": "10s",
+        "Use Time": "1s"
+      }
     },
     {
       "id": "agave-juice",
@@ -674,7 +732,10 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-11-02T15:06:56.599364+00:00"
+      "updatedAt": "2025-11-02T15:06:56.599364+00:00",
+      "rtId": "air_freshener",
+      "weightKg": 0.3,
+      "stackSize": 5
     },
     {
       "id": "alarm-clock",
@@ -752,7 +813,17 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-10-08T11:33:04.981628+00:00",
-      "updatedAt": "2025-10-31T11:10:19.755686+00:00"
+      "updatedAt": "2025-10-31T11:10:19.755686+00:00",
+      "rtId": "alarm_clock",
+      "weightKg": 2.0,
+      "stackSize": 3,
+      "recyclesInto": {
+        "plastic_parts": 6,
+        "processor": 1
+      },
+      "salvagesInto": {
+        "processor": 1
+      }
     },
     {
       "id": "angled-grip-i",
@@ -833,7 +904,17 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-10-31T14:59:14.49906+00:00"
+      "updatedAt": "2025-10-31T14:59:14.49906+00:00",
+      "rtId": "angled_grip_i",
+      "weightKg": 0.25,
+      "recipe": {
+        "plastic_parts": 6,
+        "duct_tape": 1
+      },
+      "craftBench": "weapon_bench",
+      "rtEffects": {
+        "Reduced Horizontal Recoil": "20%"
+      }
     },
     {
       "id": "angled-grip-ii",
@@ -876,7 +957,21 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-10-28T12:58:32.940898+00:00"
+      "updatedAt": "2025-10-28T12:58:32.940898+00:00",
+      "rtId": "angled_grip_ii",
+      "weightKg": 0.5,
+      "recipe": {
+        "mechanical_components": 2,
+        "duct_tape": 3
+      },
+      "recyclesInto": {
+        "mechanical_components": 1,
+        "duct_tape": 1
+      },
+      "craftBench": "weapon_bench",
+      "rtEffects": {
+        "Reduced Horizontal Recoil": "30%"
+      }
     },
     {
       "id": "angled-grip-ii-recipe",
@@ -1035,7 +1130,17 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-10-30T14:44:53.14077+00:00"
+      "updatedAt": "2025-10-30T14:44:53.14077+00:00",
+      "rtId": "angled_grip_iii",
+      "weightKg": 0.75,
+      "recyclesInto": {
+        "mod_components": 1,
+        "duct_tape": 2
+      },
+      "rtEffects": {
+        "Reduced Horizontal Recoil": "40%",
+        "Reduced ADS Speed": "30%"
+      }
     },
     {
       "id": "angled-grip-iii-recipe",
@@ -1196,7 +1301,18 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-11-08T21:04:10.060512+00:00"
+      "updatedAt": "2025-11-08T21:04:10.060512+00:00",
+      "rtId": "antiseptic",
+      "weightKg": 1.0,
+      "stackSize": 5,
+      "recipe": {
+        "chemicals": 10,
+        "great_mullein": 2
+      },
+      "recyclesInto": {
+        "chemicals": 10
+      },
+      "craftBench": "refiner"
     },
     {
       "id": "anvil-recipe",
@@ -1276,7 +1392,9 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-10-09T07:59:15.006805+00:00",
-      "updatedAt": "2025-11-03T23:59:47.96511+00:00"
+      "updatedAt": "2025-11-03T23:59:47.96511+00:00",
+      "rtId": "anvil_blueprint",
+      "weightKg": 0.0
     },
     {
       "id": "anvil-i",
@@ -1360,7 +1478,28 @@
       "subcategory": "Hand Cannon",
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-11-04T02:39:41.908741+00:00"
+      "updatedAt": "2025-11-04T02:39:41.908741+00:00",
+      "rtId": "anvil_i",
+      "weightKg": 5.0,
+      "recipe": {
+        "mechanical_components": 5,
+        "simple_gun_parts": 6
+      },
+      "recyclesInto": {
+        "mechanical_components": 2,
+        "simple_gun_parts": 2
+      },
+      "salvagesInto": {
+        "simple_gun_parts": 2
+      },
+      "craftBench": "weapon_bench",
+      "rtEffects": {
+        "Durability": "100/100",
+        "Ammo Type": "Heavy Ammo",
+        "Magazine Size": 6,
+        "Firing Mode": "Single-Action",
+        "ARC Armor Penetration": "Strong"
+      }
     },
     {
       "id": "anvil-ii",
@@ -1440,7 +1579,25 @@
       "subcategory": "Pistol",
       "shieldType": null,
       "createdAt": "2025-10-08T11:49:46.994793+00:00",
-      "updatedAt": "2025-11-04T02:45:40.783659+00:00"
+      "updatedAt": "2025-11-04T02:45:40.783659+00:00",
+      "rtId": "anvil_ii",
+      "weightKg": 5.0,
+      "recyclesInto": {
+        "mechanical_components": 3,
+        "simple_gun_parts": 3
+      },
+      "salvagesInto": {
+        "simple_gun_parts": 3
+      },
+      "rtEffects": {
+        "Durability": "110/110",
+        "Ammo Type": "Heavy Ammo",
+        "Magazine Size": 6,
+        "Firing Mode": "Single-Action",
+        "ARC Armor Penetration": "Strong",
+        "Reduced Dispersion Recovery Time": "6.5%",
+        "Increased Fire Rate": "25%"
+      }
     },
     {
       "id": "anvil-iii",
@@ -1522,7 +1679,25 @@
       "subcategory": "Pistol",
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-11-04T02:48:38.2231+00:00"
+      "updatedAt": "2025-11-04T02:48:38.2231+00:00",
+      "rtId": "anvil_iii",
+      "weightKg": 5.0,
+      "recyclesInto": {
+        "mechanical_components": 4,
+        "simple_gun_parts": 4
+      },
+      "salvagesInto": {
+        "simple_gun_parts": 4
+      },
+      "rtEffects": {
+        "Durability": "120/120",
+        "Ammo Type": "Heavy Ammo",
+        "Magazine Size": 6,
+        "Firing Mode": "Single-Action",
+        "ARC Armor Penetration": "Strong",
+        "Reduced Dispersion Recovery Time": "12.5%",
+        "Increased Fire Rate": "50%"
+      }
     },
     {
       "id": "anvil-iv",
@@ -1604,7 +1779,25 @@
       "subcategory": "Pistol",
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-11-04T02:50:03.446155+00:00"
+      "updatedAt": "2025-11-04T02:50:03.446155+00:00",
+      "rtId": "anvil_iv",
+      "weightKg": 5.0,
+      "recyclesInto": {
+        "mechanical_components": 5,
+        "simple_gun_parts": 5
+      },
+      "salvagesInto": {
+        "simple_gun_parts": 5
+      },
+      "rtEffects": {
+        "Durability": "130/130",
+        "Ammo Type": "Heavy Ammo",
+        "Magazine Size": 6,
+        "Firing Mode": "Single-Action",
+        "ARC Armor Penetration": "Strong",
+        "Reduced Dispersion Recovery Time": "18.75%",
+        "Increased Fire Rate": "75%"
+      }
     },
     {
       "id": "anvil-splitter",
@@ -1684,7 +1877,17 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-10-09T07:54:31.061732+00:00",
-      "updatedAt": "2025-11-06T15:29:50.825151+00:00"
+      "updatedAt": "2025-11-06T15:29:50.825151+00:00",
+      "rtId": "anvil_splitter",
+      "weightKg": 0.5,
+      "recyclesInto": {
+        "mod_components": 1,
+        "processor": 1
+      },
+      "rtEffects": {
+        "Projectiles Per Shot": "+3",
+        "Reduced Projectile Damage": "70%"
+      }
     },
     {
       "id": "anvil-splitter-recipe",
@@ -1992,7 +2195,15 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-10-28T12:58:32.940898+00:00"
+      "updatedAt": "2025-10-28T12:58:32.940898+00:00",
+      "rtId": "apricot",
+      "weightKg": 0.2,
+      "stackSize": 10,
+      "recyclesInto": {},
+      "rtEffects": {
+        "Stamina": 20,
+        "Use Time": "1s"
+      }
     },
     {
       "id": "arc-alloy",
@@ -2062,7 +2273,13 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-10-28T12:58:32.940898+00:00"
+      "updatedAt": "2025-10-28T12:58:32.940898+00:00",
+      "rtId": "arc_alloy",
+      "weightKg": 0.25,
+      "stackSize": 15,
+      "recyclesInto": {
+        "metal_parts": 2
+      }
     },
     {
       "id": "arc-circuitry",
@@ -2145,7 +2362,17 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-11-13T10:11:48.227829+00:00"
+      "updatedAt": "2025-11-13T10:11:48.227829+00:00",
+      "rtId": "arc_circuitry",
+      "weightKg": 0.3,
+      "stackSize": 5,
+      "recipe": {
+        "arc_alloy": 8
+      },
+      "recyclesInto": {
+        "arc_alloy": 2
+      },
+      "craftBench": "refiner"
     },
     {
       "id": "arc-circuitry-recipe",
@@ -2290,7 +2517,16 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-10-08T13:08:49.589736+00:00",
-      "updatedAt": "2025-10-28T12:58:32.940898+00:00"
+      "updatedAt": "2025-10-28T12:58:32.940898+00:00",
+      "rtId": "arc_coolant",
+      "weightKg": 1.0,
+      "stackSize": 3,
+      "recyclesInto": {
+        "chemicals": 16
+      },
+      "salvagesInto": {
+        "chemicals": 9
+      }
     },
     {
       "id": "arc-flex-rubber",
@@ -2371,7 +2607,16 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-10-31T11:15:43.659189+00:00"
+      "updatedAt": "2025-10-31T11:15:43.659189+00:00",
+      "rtId": "arc_flex_rubber",
+      "weightKg": 1.0,
+      "stackSize": 3,
+      "recyclesInto": {
+        "rubber_parts": 16
+      },
+      "salvagesInto": {
+        "rubber_parts": 9
+      }
     },
     {
       "id": "arc-motion-core",
@@ -2454,7 +2699,17 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-11-13T10:11:35.177532+00:00"
+      "updatedAt": "2025-11-13T10:11:35.177532+00:00",
+      "rtId": "arc_motion_core",
+      "weightKg": 0.3,
+      "stackSize": 5,
+      "recipe": {
+        "arc_alloy": 8
+      },
+      "recyclesInto": {
+        "arc_alloy": 2
+      },
+      "craftBench": "refiner"
     },
     {
       "id": "arc-performance-steel",
@@ -2532,7 +2787,16 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-10-08T15:15:16.117639+00:00",
-      "updatedAt": "2025-10-31T11:16:58.509659+00:00"
+      "updatedAt": "2025-10-31T11:16:58.509659+00:00",
+      "rtId": "arc_performance_steel",
+      "weightKg": 1.0,
+      "stackSize": 3,
+      "recyclesInto": {
+        "metal_parts": 12
+      },
+      "salvagesInto": {
+        "metal_parts": 7
+      }
     },
     {
       "id": "arc-powercell",
@@ -2602,7 +2866,16 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-10-28T12:58:32.940898+00:00"
+      "updatedAt": "2025-10-28T12:58:32.940898+00:00",
+      "rtId": "arc_powercell",
+      "weightKg": 0.5,
+      "stackSize": 5,
+      "recyclesInto": {},
+      "rtEffects": {
+        "Recharge": "2/s",
+        "Duration": "10s",
+        "Use Time": "3s"
+      }
     },
     {
       "id": "arc-synthetic-resin",
@@ -2669,7 +2942,16 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-10-08T15:16:31.235564+00:00",
-      "updatedAt": "2025-10-28T12:58:32.940898+00:00"
+      "updatedAt": "2025-10-28T12:58:32.940898+00:00",
+      "rtId": "arc_synthetic_resin",
+      "weightKg": 1.0,
+      "stackSize": 3,
+      "recyclesInto": {
+        "plastic_parts": 14
+      },
+      "salvagesInto": {
+        "plastic_parts": 8
+      }
     },
     {
       "id": "arc-thermo-lining",
@@ -2736,7 +3018,16 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-10-08T15:17:16.489343+00:00",
-      "updatedAt": "2025-10-28T12:58:32.940898+00:00"
+      "updatedAt": "2025-10-28T12:58:32.940898+00:00",
+      "rtId": "arc_thermo_lining",
+      "weightKg": 1.0,
+      "stackSize": 3,
+      "recyclesInto": {
+        "fabric": 16
+      },
+      "salvagesInto": {
+        "fabric": 9
+      }
     },
     {
       "id": "arpeggio-i",
@@ -2820,7 +3111,21 @@
       "subcategory": "Assault Rifle",
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-11-04T00:43:36.38532+00:00"
+      "updatedAt": "2025-11-04T00:43:36.38532+00:00",
+      "rtId": "arpeggio_i",
+      "weightKg": 7.0,
+      "recipe": {
+        "mechanical_components": 6,
+        "simple_gun_parts": 6
+      },
+      "craftBench": "weapon_bench",
+      "rtEffects": {
+        "Durability": "100/100",
+        "Ammo Type": "Medium Ammo",
+        "Magazine Size": 24,
+        "Firing Mode": "3-Round Burst",
+        "ARC Armor Penetration": "Moderate"
+      }
     },
     {
       "id": "arpeggio-ii",
@@ -2900,7 +3205,19 @@
       "subcategory": "Assault Rifle",
       "shieldType": null,
       "createdAt": "2025-10-09T07:48:50.636132+00:00",
-      "updatedAt": "2025-11-04T00:42:39.487836+00:00"
+      "updatedAt": "2025-11-04T00:42:39.487836+00:00",
+      "rtId": "arpeggio_ii",
+      "weightKg": 7.0,
+      "craftBench": "weapon_bench",
+      "rtEffects": {
+        "Durability": "110/110",
+        "Ammo Type": "Medium Ammo",
+        "Magazine Size": 24,
+        "Firing Mode": "3-Round Burst",
+        "ARC Armor Penetration": "Moderate",
+        "Increased Fire Rate": "20%",
+        "Reduced Reload Time": "12.5%"
+      }
     },
     {
       "id": "arpeggio-iii",
@@ -2982,7 +3299,19 @@
       "subcategory": "Assault Rifle",
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-11-04T00:44:47.30443+00:00"
+      "updatedAt": "2025-11-04T00:44:47.30443+00:00",
+      "rtId": "arpeggio_iii",
+      "weightKg": 7.0,
+      "craftBench": "weapon_bench",
+      "rtEffects": {
+        "Durability": "120/120",
+        "Ammo Type": "Medium Ammo",
+        "Magazine Size": 24,
+        "Firing Mode": "3-Round Burst",
+        "ARC Armor Penetration": "Moderate",
+        "Increased Fire Rate": "40%",
+        "Reduced Reload Time": "25%"
+      }
     },
     {
       "id": "arpeggio-iv",
@@ -3064,7 +3393,23 @@
       "subcategory": "Assault Rifle",
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-11-04T00:48:18.55743+00:00"
+      "updatedAt": "2025-11-04T00:48:18.55743+00:00",
+      "rtId": "arpeggio_iv",
+      "weightKg": 7.0,
+      "recyclesInto": {
+        "mechanical_components": 5,
+        "simple_gun_parts": 5
+      },
+      "craftBench": "weapon_bench",
+      "rtEffects": {
+        "Durability": "130/130",
+        "Ammo Type": "Medium Ammo",
+        "Magazine Size": 24,
+        "Firing Mode": "3-Round Burst",
+        "ARC Armor Penetration": "Moderate",
+        "Increased Fire Rate": "60%",
+        "Reduced Reload Time": "50%"
+      }
     },
     {
       "id": "assorted-seeds",
@@ -3131,7 +3476,11 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-10-17T22:08:40.169911+00:00",
-      "updatedAt": "2025-10-28T12:58:32.940898+00:00"
+      "updatedAt": "2025-10-28T12:58:32.940898+00:00",
+      "rtId": "assorted_seeds",
+      "weightKg": 0.05,
+      "stackSize": 100,
+      "recyclesInto": {}
     },
     {
       "id": "aviator-outfit",
@@ -3453,7 +3802,25 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-10-31T14:44:09.254044+00:00"
+      "updatedAt": "2025-10-31T14:44:09.254044+00:00",
+      "rtId": "bandage",
+      "weightKg": 0.1,
+      "stackSize": 5,
+      "recipe": {
+        "fabric": 5
+      },
+      "recyclesInto": {
+        "fabric": 2
+      },
+      "craftBench": [
+        "workbench",
+        "med_station"
+      ],
+      "rtEffects": {
+        "Healing": "2/s",
+        "Duration": "10s",
+        "Use Time": "1.5s"
+      }
     },
     {
       "id": "barricade-kit",
@@ -3523,7 +3890,21 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-10-28T12:58:32.940898+00:00"
+      "updatedAt": "2025-10-28T12:58:32.940898+00:00",
+      "rtId": "barricade_kit",
+      "weightKg": 0.4,
+      "stackSize": 3,
+      "recipe": {
+        "mechanical_components": 1
+      },
+      "recyclesInto": {
+        "metal_parts": 4
+      },
+      "craftBench": "utility_bench",
+      "rtEffects": {
+        "Health": 500,
+        "Duration": "500 Health"
+      }
     },
     {
       "id": "barricade-kit-recipe",
@@ -3601,7 +3982,9 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-10-09T08:50:26.7282+00:00",
-      "updatedAt": "2025-10-28T12:58:32.940898+00:00"
+      "updatedAt": "2025-10-28T12:58:32.940898+00:00",
+      "rtId": "barricade_kit_blueprint",
+      "weightKg": 0.0
     },
     {
       "id": "bastion-part",
@@ -3684,7 +4067,17 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
-      "updatedAt": "2025-11-13T05:48:27.251975+00:00"
+      "updatedAt": "2025-11-13T05:48:27.251975+00:00",
+      "rtId": "bastion_cell",
+      "weightKg": 1.0,
+      "stackSize": 3,
+      "recyclesInto": {
+        "arc_alloy": 2,
+        "advanced_mechanical_components": 2
+      },
+      "salvagesInto": {
+        "advanced_mechanical_components": 2
+      }
     },
     {
       "id": "battery",
@@ -3751,7 +4144,16 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-10-05T13:21:02.295+00:00",
-      "updatedAt": "2025-10-28T12:58:32.940898+00:00"
+      "updatedAt": "2025-10-28T12:58:32.940898+00:00",
+      "rtId": "battery",
+      "weightKg": 0.25,
+      "stackSize": 15,
+      "recyclesInto": {
+        "metal_parts": 2
+      },
+      "salvagesInto": {
+        "metal_parts": 1
+      }
     },
     {
       "id": "bettina-blueprint",
@@ -3831,7 +4233,15 @@
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-10-19T20:41:57.104927+00:00",
-      "updatedAt": "2025-11-04T10:38:59.352368+00:00"
+      "updatedAt": "2025-11-04T10:38:59.352368+00:00",
+      "rtId": "bettina_blueprint",
+      "weightKg": 0.0,
+      "recipe": {
+        "advanced_mechanical_components": 3,
+        "heavy_gun_parts": 3,
+        "canister": 3
+      }
     }
-  ]
+  ],
+  "lastUpdatedRaidTheory": "2025-11-17T19:25:29Z"
 }
