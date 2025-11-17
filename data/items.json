@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-16T11:00:50.049Z",
+  "lastUpdated": "2025-11-17T11:00:50.352Z",
   "source": "metaforge",
   "items": [
     {
@@ -78,7 +78,7 @@
       "slug": "advanced-arc-powercell",
       "name": "Advanced ARC Powercell",
       "description": "Very valuable resource that drops from certain ARC enemies",
-      "type": "Misc",
+      "type": "Topside Material",
       "rarity": "Rare",
       "value": 640,
       "icon": "https://cdn.metaforge.app/arc-raiders/icons/advanced-arc-powercell.webp",
@@ -90,6 +90,7 @@
       "stats": {
         "range": 0,
         "damage": 0,
+        "health": 0,
         "radius": 0,
         "shield": 0,
         "weight": 0.5,
@@ -106,6 +107,10 @@
         "damageMult": 0,
         "raiderStun": 0,
         "weightLimit": 0,
+        "augmentSlots": 0,
+        "healingSlots": 0,
+        "magazineSize": 0,
+        "reducedNoise": 0,
         "shieldCharge": 0,
         "backpackSlots": 0,
         "quickUseSlots": 0,
@@ -119,12 +124,20 @@
         "increasedADSSpeed": 0,
         "increasedFireRate": 0,
         "reducedReloadTime": 0,
+        "illuminationRadius": 0,
+        "increasedEquipTime": 0,
         "reducedUnequipTime": 0,
         "shieldCompatibility": "",
+        "increasedUnequipTime": 0,
         "reducedVerticalRecoil": 0,
+        "increasedBulletVelocity": 0,
         "increasedVerticalRecoil": 0,
+        "reducedMaxShotDispersion": 0,
+        "reducedPerShotDispersion": 0,
         "reducedDurabilityBurnRate": 0,
-        "increasedRecoilRecoveryTime": 0
+        "reducedRecoilRecoveryTime": 0,
+        "increasedRecoilRecoveryTime": 0,
+        "reducedDispersionRecoveryTime": 0
       },
       "search": "advanced arc powercell",
       "aliases": [
@@ -133,12 +146,12 @@
         "advancedarcpowercell",
         "advanced"
       ],
-      "category": "misc",
+      "category": "topside material",
       "flavorText": null,
       "subcategory": null,
       "shieldType": null,
       "createdAt": "2025-10-17T23:09:59.354807+00:00",
-      "updatedAt": "2025-10-28T12:58:32.940898+00:00"
+      "updatedAt": "2025-11-16T18:24:23.79568+00:00"
     },
     {
       "id": "advanced-electrical-components",
