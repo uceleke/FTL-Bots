@@ -1,0 +1,63 @@
+name: Merge Arc Raiders items
+
+on:
+  # Manual run from the Actions tab
+  workflow_dispatch:
+
+  # Scheduled run once a day at 3 AM Pacific (11:00 UTC)
+  schedule:
+    - cron: "0 11 * * *"
+
+permissions:
+  contents: write  # needed so we can push updated items.json
+
+jobs:
+  merge-items:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # so git diff works correctly
+
+      - name: Clone RaidTheory data repo
+        run: |
+          mkdir -p external
+          git clone --depth 1 https://github.com/RaidTheory/arcraiders-data.git external/arcraiders-data
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Optional: if you ever add requirements.txt, this will install them.
+      # If there's no requirements.txt, this does nothing and exits cleanly.
+      - name: Install Python dependencies (optional)
+        run: |
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            echo "No requirements.txt, skipping pip install."
+          fi
+
+      - name: Run merge script
+        run: |
+          python scripts/merge-items.py
+
+      - name: Commit and push updated items.json
+        run: |
+          # If nothing changed, bail out
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Adjust this list if your script updates additional files
+          git add data/items.json
+
+          git commit -m "chore: update items.json via merge-items workflow"
+          git push
