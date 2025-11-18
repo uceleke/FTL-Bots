@@ -73,7 +73,7 @@
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
       "updatedAt": "2025-10-28T12:58:32.940898+00:00",
       "rtId": "adrenaline_shot",
-      "weightKg": 0.2,
+      "weightKg": 0.3,
       "stackSize": 5,
       "recipe": {
         "chemicals": 3,
@@ -88,6 +88,9 @@
         "Stamina Regeneration": "5/s",
         "Duration": "10s",
         "Use Time": "1s"
+      },
+      "salvagesInto": {
+        "chemicals": 1
       }
     },
     {
@@ -257,7 +260,7 @@
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
       "updatedAt": "2025-10-31T15:18:08.567486+00:00",
       "rtId": "advanced_electrical_components",
-      "weightKg": 1.0,
+      "weightKg": 1,
       "stackSize": 5,
       "recipe": {
         "wires": 3,
@@ -431,7 +434,7 @@
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
       "updatedAt": "2025-10-31T15:18:55.209831+00:00",
       "rtId": "advanced_mechanical_components",
-      "weightKg": 1.0,
+      "weightKg": 1,
       "stackSize": 5,
       "recipe": {
         "steel_spring": 2,
@@ -815,7 +818,7 @@
       "createdAt": "2025-10-08T11:33:04.981628+00:00",
       "updatedAt": "2025-10-31T11:10:19.755686+00:00",
       "rtId": "alarm_clock",
-      "weightKg": 2.0,
+      "weightKg": 2,
       "stackSize": 3,
       "recyclesInto": {
         "plastic_parts": 6,
@@ -1303,7 +1306,7 @@
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
       "updatedAt": "2025-11-08T21:04:10.060512+00:00",
       "rtId": "antiseptic",
-      "weightKg": 1.0,
+      "weightKg": 1,
       "stackSize": 5,
       "recipe": {
         "chemicals": 10,
@@ -1394,7 +1397,7 @@
       "createdAt": "2025-10-09T07:59:15.006805+00:00",
       "updatedAt": "2025-11-03T23:59:47.96511+00:00",
       "rtId": "anvil_blueprint",
-      "weightKg": 0.0
+      "weightKg": 0
     },
     {
       "id": "anvil-i",
@@ -1480,7 +1483,7 @@
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
       "updatedAt": "2025-11-04T02:39:41.908741+00:00",
       "rtId": "anvil_i",
-      "weightKg": 5.0,
+      "weightKg": 5,
       "recipe": {
         "mechanical_components": 5,
         "simple_gun_parts": 6
@@ -1581,7 +1584,7 @@
       "createdAt": "2025-10-08T11:49:46.994793+00:00",
       "updatedAt": "2025-11-04T02:45:40.783659+00:00",
       "rtId": "anvil_ii",
-      "weightKg": 5.0,
+      "weightKg": 5,
       "recyclesInto": {
         "mechanical_components": 3,
         "simple_gun_parts": 3
@@ -1681,7 +1684,7 @@
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
       "updatedAt": "2025-11-04T02:48:38.2231+00:00",
       "rtId": "anvil_iii",
-      "weightKg": 5.0,
+      "weightKg": 5,
       "recyclesInto": {
         "mechanical_components": 4,
         "simple_gun_parts": 4
@@ -1781,7 +1784,7 @@
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
       "updatedAt": "2025-11-04T02:50:03.446155+00:00",
       "rtId": "anvil_iv",
-      "weightKg": 5.0,
+      "weightKg": 5,
       "recyclesInto": {
         "mechanical_components": 5,
         "simple_gun_parts": 5
@@ -2519,7 +2522,7 @@
       "createdAt": "2025-10-08T13:08:49.589736+00:00",
       "updatedAt": "2025-10-28T12:58:32.940898+00:00",
       "rtId": "arc_coolant",
-      "weightKg": 1.0,
+      "weightKg": 1,
       "stackSize": 3,
       "recyclesInto": {
         "chemicals": 16
@@ -2609,7 +2612,7 @@
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
       "updatedAt": "2025-10-31T11:15:43.659189+00:00",
       "rtId": "arc_flex_rubber",
-      "weightKg": 1.0,
+      "weightKg": 1,
       "stackSize": 3,
       "recyclesInto": {
         "rubber_parts": 16
@@ -2789,7 +2792,7 @@
       "createdAt": "2025-10-08T15:15:16.117639+00:00",
       "updatedAt": "2025-10-31T11:16:58.509659+00:00",
       "rtId": "arc_performance_steel",
-      "weightKg": 1.0,
+      "weightKg": 1,
       "stackSize": 3,
       "recyclesInto": {
         "metal_parts": 12
@@ -2944,7 +2947,7 @@
       "createdAt": "2025-10-08T15:16:31.235564+00:00",
       "updatedAt": "2025-10-28T12:58:32.940898+00:00",
       "rtId": "arc_synthetic_resin",
-      "weightKg": 1.0,
+      "weightKg": 1,
       "stackSize": 3,
       "recyclesInto": {
         "plastic_parts": 14
@@ -3020,7 +3023,7 @@
       "createdAt": "2025-10-08T15:17:16.489343+00:00",
       "updatedAt": "2025-10-28T12:58:32.940898+00:00",
       "rtId": "arc_thermo_lining",
-      "weightKg": 1.0,
+      "weightKg": 1,
       "stackSize": 3,
       "recyclesInto": {
         "fabric": 16
@@ -3113,7 +3116,7 @@
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
       "updatedAt": "2025-11-04T00:43:36.38532+00:00",
       "rtId": "arpeggio_i",
-      "weightKg": 7.0,
+      "weightKg": 7,
       "recipe": {
         "mechanical_components": 6,
         "simple_gun_parts": 6
@@ -3207,7 +3210,7 @@
       "createdAt": "2025-10-09T07:48:50.636132+00:00",
       "updatedAt": "2025-11-04T00:42:39.487836+00:00",
       "rtId": "arpeggio_ii",
-      "weightKg": 7.0,
+      "weightKg": 7,
       "craftBench": "weapon_bench",
       "rtEffects": {
         "Durability": "110/110",
@@ -3301,7 +3304,7 @@
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
       "updatedAt": "2025-11-04T00:44:47.30443+00:00",
       "rtId": "arpeggio_iii",
-      "weightKg": 7.0,
+      "weightKg": 7,
       "craftBench": "weapon_bench",
       "rtEffects": {
         "Durability": "120/120",
@@ -3395,7 +3398,7 @@
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
       "updatedAt": "2025-11-04T00:48:18.55743+00:00",
       "rtId": "arpeggio_iv",
-      "weightKg": 7.0,
+      "weightKg": 7,
       "recyclesInto": {
         "mechanical_components": 5,
         "simple_gun_parts": 5
@@ -3984,7 +3987,7 @@
       "createdAt": "2025-10-09T08:50:26.7282+00:00",
       "updatedAt": "2025-10-28T12:58:32.940898+00:00",
       "rtId": "barricade_kit_blueprint",
-      "weightKg": 0.0
+      "weightKg": 0
     },
     {
       "id": "bastion-part",
@@ -4069,7 +4072,7 @@
       "createdAt": "2025-09-23T18:21:03.51415+00:00",
       "updatedAt": "2025-11-13T05:48:27.251975+00:00",
       "rtId": "bastion_cell",
-      "weightKg": 1.0,
+      "weightKg": 1,
       "stackSize": 3,
       "recyclesInto": {
         "arc_alloy": 2,
@@ -4235,7 +4238,7 @@
       "createdAt": "2025-10-19T20:41:57.104927+00:00",
       "updatedAt": "2025-11-04T10:38:59.352368+00:00",
       "rtId": "bettina_blueprint",
-      "weightKg": 0.0,
+      "weightKg": 0,
       "recipe": {
         "advanced_mechanical_components": 3,
         "heavy_gun_parts": 3,
@@ -4243,5 +4246,5 @@
       }
     }
   ],
-  "lastUpdatedRaidTheory": "2025-11-17T19:25:29Z"
+  "lastUpdatedRaidTheory": "2025-11-18T10:15:40Z"
 }
