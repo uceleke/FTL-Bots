@@ -3,7 +3,8 @@ name: Merge MetaForge & RaidTheory items
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 10 * * *"  # 10:00 UTC daily – adjust if you like
+    # 10:00 UTC daily – adjust as needed
+    - cron: "0 10 * * *"
 
 permissions:
   contents: write
@@ -17,15 +18,13 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
+          # Full history so create-pull-request can diff correctly
           fetch-depth: 0
 
       - name: Ensure external dir exists and is clean
         run: |
+          rm -rf external/arcraiders-data
           mkdir -p external
-          if [ -d external/arcraiders-data ]; then
-            echo "Cleaning existing external/arcraiders-data directory"
-            rm -rf external/arcraiders-data
-          fi
 
       - name: Clone RaidTheory arcraiders-data
         run: |
@@ -36,18 +35,32 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+          # ensure requests is available for merge_items.py
+          pip install requests
+
       - name: Run merge_items.py
         run: |
           python scripts/merge_items.py
 
       - name: Check for changes
+        id: git-diff
         run: |
           if git diff --quiet; then
-            echo "No changes to commit"
-            exit 0
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No changes detected; skipping PR."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Changes detected; PR will be created or updated."
           fi
 
       - name: Create or update pull request
+        if: steps.git-diff.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -59,9 +72,10 @@ jobs:
             - MetaForge items as the base
             - RaidTheory data merged via `scripts/merge_items.py`
 
-            This PR is created by the merge-items GitHub Actions workflow.
+            This PR is created by the `Merge MetaForge & RaidTheory items` workflow.
           commit-message: "chore: update items.json via merge-items workflow"
           labels: |
             automated
             items
           base: main
+          delete-branch: false
