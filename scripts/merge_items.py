@@ -18,14 +18,11 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 # ---- Config -----------------------------------------------------------------
 
-# MetaForge items endpoint (adjust if they change their API)
 METAFORGE_ITEMS_URL = "https://metaforge.app/api/arc-raiders/items"
 
-# Path to RaidTheory data, cloned by the GitHub Action
-# NOTE: adjust this if their repo structure is different
-RAIDTHEORY_ITEMS_PATH = Path("external/arcraiders-data/items.json")
+# NOTE: RaidTheory uses an `items/` directory, not a single items.json file
+RAIDTHEORY_ITEMS_DIR = Path("external/arcraiders-data/items")
 
-# Final output path in your repo
 OUTPUT_PATH = Path("data/items.json")
 
 
@@ -38,9 +35,9 @@ def load_metaforge_items() -> List[Dict[str, Any]]:
     resp.raise_for_status()
     data = resp.json()
 
-    # Handle possible response shapes
+    # TODO: depending on how their API is shaped (and paginated),
+    # you may need to add pagination or params here.
     if isinstance(data, dict):
-        # e.g. { "items": [...] } or { "data": [...] }
         for key in ("items", "data", "results"):
             if key in data and isinstance(data[key], list):
                 items = data[key]
@@ -60,29 +57,33 @@ def load_raidtheory_items() -> List[Dict[str, Any]]:
     """
     Load items from the RaidTheory repo.
 
-    Adjust this if arcraiders-data uses a different structure, e.g.:
-    - a different JSON filename
-    - items spread across multiple files
+    We read ALL JSON files under external/arcraiders-data/items/.
     """
-    if not RAIDTHEORY_ITEMS_PATH.exists():
-        logging.warning("RaidTheory items file %s not found, skipping RaidTheory source", RAIDTHEORY_ITEMS_PATH)
+    if not RAIDTHEORY_ITEMS_DIR.exists():
+        logging.warning(
+            "RaidTheory items directory %s not found – skipping RaidTheory source",
+            RAIDTHEORY_ITEMS_DIR,
+        )
         return []
 
-    logging.info("Loading RaidTheory items from %s", RAIDTHEORY_ITEMS_PATH)
-    with RAIDTHEORY_ITEMS_PATH.open("r", encoding="utf-8") as f:
-        data = json.load(f)
+    items: List[Dict[str, Any]] = []
 
-    if isinstance(data, dict):
-        for key in ("items", "data", "results"):
-            if key in data and isinstance(data[key], list):
-                items = data[key]
-                break
+    logging.info("Scanning RaidTheory items in %s", RAIDTHEORY_ITEMS_DIR)
+    for path in RAIDTHEORY_ITEMS_DIR.glob("*.json"):
+        logging.info("  Reading %s", path)
+        with path.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        if isinstance(data, list):
+            items.extend(data)
+        elif isinstance(data, dict):
+            # Some files may be of shape { "items": [...] }
+            if "items" in data and isinstance(data["items"], list):
+                items.extend(data["items"])
+            else:
+                items.append(data)
         else:
-            raise ValueError("Unexpected RaidTheory items file shape (dict without items list)")
-    elif isinstance(data, list):
-        items = data
-    else:
-        raise ValueError(f"Unexpected RaidTheory items file type: {type(data)}")
+            logging.warning("    Skipping %s – unexpected JSON type %s", path, type(data))
 
     logging.info("Loaded %d RaidTheory items", len(items))
     return items
@@ -94,15 +95,15 @@ def item_key(item: Dict[str, Any]) -> str:
     """
     Derive a stable key for an item.
 
-    Priority: id → slug → name
-    Adjust this if your real data uses a different canonical key.
+    Priority: id → slug → name.
+    Adjust if your real data uses something else.
     """
     for field in ("id", "slug", "name"):
         value = item.get(field)
         if isinstance(value, (str, int)):
             return str(value).lower().strip()
 
-    # Fallback: entire item as a JSON string (should rarely be needed)
+    # Fallback: entire item as a JSON string (rare)
     return json.dumps(item, sort_keys=True)
 
 
@@ -146,7 +147,6 @@ def merge_items(
 
     # ---- Option C: stable, deterministic output -----------------------------
 
-    # Sort items by name (then id as a secondary key)
     def sort_key(it: Dict[str, Any]):
         name = str(it.get("name", "")).lower()
         id_val = str(it.get("id", "")).lower()
@@ -154,7 +154,6 @@ def merge_items(
 
     items_list.sort(key=sort_key)
 
-    # Sort keys inside each item so the JSON structure is stable
     normalized: List[Dict[str, Any]] = []
     for item in items_list:
         normalized.append({k: item[k] for k in sorted(item.keys())})
